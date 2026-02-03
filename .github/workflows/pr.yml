@@ -26,6 +26,8 @@ jobs:
   docker:
     needs: [build-test-validate]
     runs-on: ubuntu-latest
+    environment:
+      name: develop 
 
     steps:
       - name: Checkout source
