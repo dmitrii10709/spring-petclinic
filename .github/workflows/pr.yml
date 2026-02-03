@@ -43,9 +43,9 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/java-app:latest \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/java-app:${{ github.sha }} .
+            # -t ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:latest \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:${{ github.sha }} .
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/java-app:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/java-app:${{ github.sha }}
+          # docker push ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:${{ github.sha }}
