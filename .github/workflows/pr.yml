@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Docker image
         run: |
-          docker buildx build -t ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:${{ github.ref_name }}-${{ github.run_number }} .
+          docker buildx build -t ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:${{ github.head_ref }}-${{ github.run_number }} .
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:${{ github.ref_name }}-${{ github.run_number }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petclinic:${{ github.head_ref }}-${{ github.run_number }}
